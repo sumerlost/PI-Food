@@ -1,6 +1,9 @@
-const a = [{ name: "hola" }, { name: "todp" }, { name: "hola" }]
+const a = [{ name: ["hola", "mi", "amor"] }, { name: ["todo", "me", "duele"] }, { name: ["hola", "soy", "yo"] }]
 const c = "hola"
-const b = a.filter(e => e.name.includes(c)
+const b = [].concat(...a.map((i) => { return i.name }))
 
-)
-console.log(b[0])
+const f = new Set(b)
+const g = Array.from(f)
+
+console.log(g)
+

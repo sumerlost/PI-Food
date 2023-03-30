@@ -1,0 +1,13 @@
+.Principal {
+    box-sizing: border-box;
+    position: relative;
+    width: 100vh;
+    height: 40vh;
+    background-color: brown;
+}
+
+.Divcont {
+    box-sizing: border-box;
+    position: relative;
+    height: 50%;
+}

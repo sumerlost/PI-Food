@@ -1,4 +1,16 @@
 .icon {
+    box-sizing: border-box;
+    position: relative;
     opacity: 50%;
-    width: 10%;
+    width: 50%;
+}
+
+.Center {
+    box-sizing: border-box;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 20vh;
+
 }

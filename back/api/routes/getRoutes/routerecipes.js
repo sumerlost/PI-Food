@@ -1,9 +1,8 @@
 const router = require("express").Router()
-const preload = require("../../controllers/preload");
+const getrecipes = require("../../Controllers/getrecipes");
 
 router.get("/recipes", async (req, res) => {
-    req.app.locals.recipes = await preload(res)
-
+    getrecipes(res)
 })
 
 module.exports = router

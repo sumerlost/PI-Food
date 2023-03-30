@@ -36,6 +36,8 @@ const Recipe = (sequelize) => {
             type: DataTypes.TEXT,
             allowNull: false,
         },
+    }, {
+        timestamps: false
     })
 }
 

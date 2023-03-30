@@ -1,9 +1,10 @@
-const a = [{ name: ["hola", "mi", "amor"] }, { name: ["todo", "me", "duele"] }, { name: ["hola", "soy", "yo"] }]
-const c = "hola"
-const b = [].concat(...a.map((i) => { return i.name }))
+const pasos = [{ number: 1, step: "primero" }, { number: 2, step: "segundo" }, { number: 3, step: "tercero" }, { number: 4, step: "cuarto" }, { number: 5, step: "quinto" }]
+//const b = [].concat(...a.map((i) => { return i.name }))
+var string = ""
+for (let e of pasos) {
+    string += e.step
+}
 
-const f = new Set(b)
-const g = Array.from(f)
+console.log(string)
 
-console.log(g)
 

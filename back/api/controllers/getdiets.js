@@ -1,8 +1,10 @@
-const getdiets = (recipes, res) => {
+const dietmap = require("../../db/controllers/dietmap")
+const mapdiets = require("../Helpers/mapdiets")
+
+const getdiets = (store, res) => {
     try {
-        const aux = [].concat(...recipes.map((i) => { return i.diets }))
-        const aux2 = new Set(aux)
-        const diets = Array.from(aux2)
+        const diets = mapdiets(store[0])
+        dietmap(diets)
         res.status(201).send(diets)
         return diets
     } catch (error) {

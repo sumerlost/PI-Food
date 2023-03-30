@@ -1,14 +1,16 @@
 const express = require("express")
 const server = express()
 const PORT = 3001
-const recipeid = require("./routes/getRoutes/recipeid")
-const recipes = require("./routes/getRoutes/recipes")
-const recipename = require("./routes/getRoutes/recipename")
-const diets = require("./routes/getRoutes/diets")
+const recipeid = require("./routes/getRoutes/routerecipeid")
+const recipes = require("./routes/getRoutes/routerecipes")
+const recipename = require("./routes/getRoutes/routerecipename")
+const diets = require("./routes/getRoutes/routediets")
 const { sequelize } = require("../db/db")
+const { loadserver } = require("./Controllers/loadserver")
 
 
-server.locals.recipes = []
+
+loadserver()
 
 server.use(express.json())
 server.use(recipes)

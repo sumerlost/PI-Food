@@ -1,0 +1,1 @@
+export const allrecipes = "localhost:3001/recipes"

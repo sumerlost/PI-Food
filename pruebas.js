@@ -6,5 +6,3 @@ for (let e of pasos) {
 }
 
 console.log(string)
-
-

@@ -5,7 +5,7 @@ const getdiets = (store, res) => {
     try {
         const diets = mapdiets(store[0])
         dietmap(diets)
-        res.status(201).send(diets)
+        res.status(201).json(diets)
         return diets
     } catch (error) {
         res.status(400).json(error.message)

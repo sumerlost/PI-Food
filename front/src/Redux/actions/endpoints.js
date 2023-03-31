@@ -1,1 +1,1 @@
-export const allrecipes = "localhost:3001/recipes"
+export const allrecipes = "http://localhost:3001/recipes"

@@ -2,7 +2,7 @@ import axios from "axios"
 import { allrecipes } from "./endpoints"
 import { GET_ALL_RECIPES } from "./types"
 
-export const getAllRecipes = async () => {
+export const getAllRecipes = () => {
     return async function (dispatch) {
         try {
             const response = await axios.get(allrecipes)
@@ -10,7 +10,6 @@ export const getAllRecipes = async () => {
         } catch (error) {
             console.log(error.message)
         }
-
     }
 }
 

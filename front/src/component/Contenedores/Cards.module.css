@@ -1,0 +1,13 @@
+.Size {
+    box-sizing: border-box;
+    width: 30vh;
+    height: 30vh;
+    justify-content: space-evenly;
+}
+
+.Position {
+    justify-content: space-evenly;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+}

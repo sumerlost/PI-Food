@@ -7,11 +7,11 @@ const recipename = require("./routes/getRoutes/routerecipename")
 const diets = require("./routes/getRoutes/routediets")
 const { sequelize } = require("../db/db")
 const { loadserver } = require("./Controllers/loadserver")
-
+const cors = require("cors")
 
 
 loadserver()
-
+server.use(cors())
 server.use(express.json())
 server.use(recipes)
 server.use(recipename)

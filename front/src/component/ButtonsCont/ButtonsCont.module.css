@@ -3,11 +3,13 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    text-align: center;
 }
 
 .Size {
     box-sizing: border-box;
     position: relative;
+    justify-content: center;
     width: 33.3vh;
     height: 20vh;
 }

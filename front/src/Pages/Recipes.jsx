@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import styles from "./Recipes.module.css"
 import Header from "../component/Header/Header"
 import { Confilascards } from "../component/Contenedores/Confilascards";

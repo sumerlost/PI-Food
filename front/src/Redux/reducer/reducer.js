@@ -1,7 +1,12 @@
-import { GET_ALL_RECIPES } from "../actions/types"
+import { GET_ALL_RECIPES, GET_RECIPE_NAME } from "../actions/types"
+import { GET_RECIPE_ID } from "../actions/types"
 
 const initialState = {
-    recipes: []
+    recipes: [],
+    recipeid: [],
+    recipesname: [],
+    diets: [],
+    len: 0
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -9,7 +14,20 @@ const rootReducer = (state = initialState, action) => {
         case GET_ALL_RECIPES:
             return {
                 ...state,
-                recipes: action.payload
+                recipes: action.payload.recipepage,
+                diets: action.payload.diets,
+                len: action.payload.len
+            }
+        case GET_RECIPE_ID:
+            return {
+                ...state,
+                recipeid: action.payload
+            }
+        case GET_RECIPE_NAME:
+            return {
+                ...state,
+                recipesname: action.payload,
+
             }
         default:
             return { ...state }

@@ -4,9 +4,9 @@ const formatrecipe = (array) => {
     for (let element of array) {
         let instructions = ""
         for (e of element.analyzedInstructions[0].steps) {
-            instructions += e.step + ". "
+            instructions += e.step + " "
         }
-        var aux = { code: element.id, title: element.title, imagen: element.image, resumen: element.summary, healthskil: element.healthScore, steps: instructions }
+        var aux = { code: element.id, title: element.title, imagen: element.image, resumen: element.summary, healthskil: element.healthScore, steps: instructions, diets: element.diets }
         ret.push(aux)
     }
     return ret;

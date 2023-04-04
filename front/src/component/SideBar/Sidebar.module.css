@@ -1,0 +1,41 @@
+.sidebar {
+    width: 200px;
+    /* ancho de la sidebar */
+
+    top: 80px;
+    /* distancia desde la parte superior */
+    bottom: 5px;
+    /* distancia desde la parte inferior */
+    left: 5px;
+    /* distancia desde la parte izquierda */
+    background-color: #fff;
+    /* color de fondo */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    /* sombra */
+    overflow-y: hidden;
+    height: 30px;
+    /* altura de la barra lateral cuando está cerrada */
+    transition: height 0.3s ease;
+    /*
+    /* scroll si hay muchos elementos */
+}
+
+.option {
+    padding: 10px;
+    /* espacio entre las opciones */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* transición al pasar el mouse */
+}
+
+.option:hover {
+    background-color: #301a1a;
+    /* color de fondo al pasar el mouse */
+}
+
+
+.expanded {
+    overflow-y: scroll;
+    height: 80px;
+    /* altura de la barra lateral cuando está abierta */
+}

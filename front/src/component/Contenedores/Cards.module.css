@@ -1,4 +1,4 @@
-.Size {
+.SizeCard {
     box-sizing: border-box;
     width: 30vh;
     height: 30vh;
@@ -6,9 +6,12 @@
     text-align: center;
 }
 
-.Position {
-    justify-content: space-evenly;
+.Cards {
     box-sizing: border-box;
+    width: 100%;
+    height: 30vh;
+    padding: 1vh;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }

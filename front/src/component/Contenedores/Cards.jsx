@@ -1,26 +1,28 @@
 import React from "react";
 import styles from "./Cards.module.css"
 import { Card } from "../Cards/Card"
-import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { getAllRecipes } from "../../Redux/actions/getallrecipes";
 
-export const Cards = ({ position }) => {
+export const Cards = ({ recipes }) => {
 
-    const recipes = useSelector(state => state.recipes)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(getAllRecipes())
-    }, [])
-
-    console.log(position)
 
     return (
-        <div className={styles.Position}>
-            <div className={styles.Size}><Card recipe={recipes[position]} /></div>
-            <div className={styles.Size}><Card recipe={recipes[position + 1]} /></div>
-            <div className={styles.Size}><Card recipe={recipes[position + 2]} /></div>
+        <div>
+            <div className={styles.Cards}>
+                <div className={styles.SizeCard}><Card recipe={recipes[0]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[1]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[2]} /></div>
+            </div>
+            <div className={styles.Cards}>
+                <div className={styles.SizeCard}><Card recipe={recipes[3]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[4]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[5]} /></div>
+            </div>
+            <div className={styles.Cards}>
+                <div className={styles.SizeCard}><Card recipe={recipes[6]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[7]} /></div>
+                <div className={styles.SizeCard}><Card recipe={recipes[8]} /></div>
+            </div>
+
         </div>
     )
 }

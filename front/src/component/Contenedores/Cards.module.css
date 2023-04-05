@@ -1,16 +1,17 @@
 .SizeCard {
     box-sizing: border-box;
-    width: 30vh;
-    height: 30vh;
+    display: flex;
+    width: 40vh;
+    height: 25vh;
     justify-content: space-evenly;
     text-align: center;
+    background-color: aqua;
 }
 
 .Cards {
     box-sizing: border-box;
     width: 100%;
     height: 30vh;
-    padding: 1vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

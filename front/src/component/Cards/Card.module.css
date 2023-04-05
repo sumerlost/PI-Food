@@ -1,0 +1,48 @@
+.Esqueleto {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+}
+
+.Img {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    display: flex;
+}
+
+.Top {
+    box-sizing: border-box;
+    height: 75%;
+    display: flex;
+    flex-direction: row;
+}
+
+.Bot {
+    box-sizing: border-box;
+    height: 25%;
+}
+
+.DietSub {
+    box-sizing: border-box;
+    margin: 0%;
+}
+
+.Diets {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    margin: 0vh;
+}
+
+.Ul {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 5px;
+}
+
+.List {
+    box-sizing: border-box;
+    height: 100%;
+    display: contents;
+}

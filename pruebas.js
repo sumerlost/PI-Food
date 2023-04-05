@@ -1,16 +1,10 @@
 
-const fun = (param) => {
-    if (param % 2 === 0) {
-        return true
-    }
-    else {
-        return false
+const a = { a: true, b: true, c: false }
+const b = []
+for (let key in a) {
+    if (a[key] === true) {
+        b.push(key)
     }
 }
+console.log(typeof b[0])
 
-fun(5)
-
-fun(6)
-
-const type = typeof 5
-console.log(type)

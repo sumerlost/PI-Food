@@ -4,7 +4,7 @@ import { getRecipeName } from "../../Redux/actions/getrecipename"
 import { useDispatch } from "react-redux"
 import { useNavigate } from "react-router-dom";
 import { Sidebar } from "../SideBar/Sidebar";
-
+import { Filter } from "../Filters/ButtonFilter";
 
 export default function Header({ handler, type }) {
     const eventName = type === "RECIPES" ? 'onKeyUp' : 'onChange';
@@ -15,7 +15,7 @@ export default function Header({ handler, type }) {
         <div className={styles.Main}>
             <div className={styles.SizeBar}>
                 <input className={styles.SearchBar} {...{ [eventName]: (event) => handler(event, navigate, dispatch) }}></input>
-                <div><Sidebar /></div>
+                <div><Filter /></div>
             </div>
         </div>
     )

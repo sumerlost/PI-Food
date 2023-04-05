@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllRecipes } from "../Redux/actions/getallrecipes"
 import { HandleSearchBar, type, HandleNav } from "../Handlers/Handlerecipes"
 
+
 export const Recipes = () => {
 
     const dispatch = useDispatch()
@@ -14,7 +15,7 @@ export const Recipes = () => {
     const diets = useSelector(state => state.diets)
     const len = useSelector(state => state.len)
     useEffect(() => {
-        dispatch(getAllRecipes(1))
+        dispatch(getAllRecipes(1, undefined))
     }, [])
 
     return (

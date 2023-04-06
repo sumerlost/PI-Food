@@ -4,5 +4,4 @@ export const handlersearch = (event, dispatch) => {
     if (event.target.value.length === 1) {
         dispatch(getRecipeName(event.target.value))
     }
-
 }

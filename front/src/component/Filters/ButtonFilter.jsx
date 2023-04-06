@@ -1,36 +1,24 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getAllRecipes } from "../../Redux/actions/getallrecipes";
+import { getfilters } from "../../Redux/actions/getfilters";
+import { HandlerDiets } from "../../Handlers/Handlerdiets";
 
 export const Filter = () => {
+
     const dispatch = useDispatch()
+    const Diets = useSelector(state => state.diets)
+    const filtros = HandlerDiets(Diets)
+    const [toggleDiets, setToggleDiets] = useState(filtros)
+    console.log(Diets)
 
-    const [toggleDiets, setToggleDiets] = useState({ "gluten%20free": false, "vegan": false, "primal": false })
+    const handlertoggle = (key) => {
+        for (let element in toggleDiets) {
+            if (key === element) {
+                setToggleDiets({ ...toggleDiets, [element]: !toggleDiets[element] })
 
-    const handletoggle1 = () => {
-        setToggleDiets({ ...toggleDiets, "gluten%20free": !toggleDiets["gluten%20free"] })
-        const filtro = []
-        for (let key in toggleDiets) {
-            if (toggleDiets[key] === true) {
-                filtro.push(key)
             }
         }
-
-    }
-    const handletoggle2 = () => {
-        setToggleDiets({ ...toggleDiets, "vegan": !toggleDiets["vegan"] })
-        const filtro = []
-        for (let key in toggleDiets) {
-            if (toggleDiets[key] === true) {
-                filtro.push(key)
-            }
-        }
-
-    }
-    const handletoggle3 = () => {
-        setToggleDiets({ ...toggleDiets, "primal": !toggleDiets["primal"] })
-
-
     }
 
     useEffect(() => {
@@ -43,14 +31,18 @@ export const Filter = () => {
         if (filtro.length === 0) {
             filtro.push("none")
         }
-        dispatch(getAllRecipes(1, filtro))
+        dispatch(getfilters(filtro))
+        dispatch(getAllRecipes(1))
     }, [toggleDiets])
 
-    return (
-        <div>
-            <button onClick={handletoggle1}>Button1</button>
-            <button onClick={handletoggle2}>VEGANE</button>
-            <button onClick={handletoggle3}>Button3</button>
-        </div>
-    )
+
+    if (Diets) {
+        return (
+            <div>
+                {Diets.map((element) => {
+                    return <button onClick={() => handlertoggle(element)}>{element}</button>
+                })}
+            </div>
+        )
+    }
 }

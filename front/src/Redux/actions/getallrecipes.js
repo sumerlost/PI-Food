@@ -1,22 +1,17 @@
 import axios from "axios"
 import { allrecipes } from "./endpoints"
 import { GET_ALL_RECIPES } from "./types"
+import store from "../store/index"
 
-export const getAllRecipes = (page, filtros) => {
+export const getAllRecipes = (page) => {
     return async function (dispatch) {
         try {
-            let iter = []
-            if (filtros === undefined) {
-                iter.push("none")
-            }
-            else if (typeof filtros === "string") {
-                iter.push(filtros)
-            }
-            else {
-                iter = filtros
+            const filters = store.getState().filters
+            if (filters.length === 0) {
+                filters.push("none")
             }
             let aux = ""
-            for (let e of iter) {
+            for (let e of filters) {
                 aux += "&filtros=" + e
             }
             console.log(allrecipes(page, aux))

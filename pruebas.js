@@ -1,10 +1,8 @@
+let a = new Array()
 
-const a = { a: true, b: true, c: false }
-const b = []
-for (let key in a) {
-    if (a[key] === true) {
-        b.push(key)
-    }
+if (a) {
+    console.log("funca")
+    console.log(a)
 }
-console.log(typeof b[0])
 
+console.log(typeof a)

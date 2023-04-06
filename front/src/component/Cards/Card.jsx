@@ -24,7 +24,5 @@ export const Card = ({ recipe }) => {
             </div>
         )
     }
-    else {
-        console.log("funca")
-    }
+
 }

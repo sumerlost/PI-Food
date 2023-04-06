@@ -1,4 +1,4 @@
-import { GET_ALL_RECIPES, GET_RECIPE_NAME } from "../actions/types"
+import { GET_ALL_RECIPES, GET_FILTERS, GET_RECIPE_NAME } from "../actions/types"
 import { GET_RECIPE_ID } from "../actions/types"
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
     recipeid: [],
     recipesname: [],
     diets: [],
-    len: 0
+    len: 0,
+    filters: []
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -29,6 +30,12 @@ const rootReducer = (state = initialState, action) => {
                 recipesname: action.payload,
 
             }
+        case GET_FILTERS:
+            return {
+                ...state,
+                filters: action.payload
+            }
+
         default:
             return { ...state }
     }

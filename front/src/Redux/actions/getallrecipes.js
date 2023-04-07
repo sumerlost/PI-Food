@@ -14,7 +14,6 @@ export const getAllRecipes = (page) => {
             for (let e of filters) {
                 aux += "&filtros=" + e
             }
-            console.log(allrecipes(page, aux))
             const response = await axios.get(allrecipes(page, aux))
             dispatch({ type: GET_ALL_RECIPES, payload: response.data })
         } catch (error) {

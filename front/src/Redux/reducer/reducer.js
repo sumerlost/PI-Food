@@ -3,11 +3,10 @@ import { GET_RECIPE_ID } from "../actions/types"
 
 const initialState = {
     recipes: [],
-    recipeid: [],
-    recipesname: [],
     diets: [],
     len: 0,
-    filters: []
+    filters: [],
+    type: ""
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -17,17 +16,23 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 recipes: action.payload.recipepage,
                 diets: action.payload.diets,
-                len: action.payload.len
+                len: action.payload.len,
+                type: GET_ALL_RECIPES
+
             }
         case GET_RECIPE_ID:
             return {
                 ...state,
-                recipeid: action.payload
+                recipes: action.payload,
+                type: GET_RECIPE_ID
             }
         case GET_RECIPE_NAME:
             return {
                 ...state,
-                recipesname: action.payload,
+                recipes: action.payload.recipepage,
+                type: GET_RECIPE_NAME,
+                len: action.payload.len,
+                diets: action.payload.diets
 
             }
         case GET_FILTERS:

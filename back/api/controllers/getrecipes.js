@@ -12,19 +12,12 @@ const filters = require("../Helpers/filters")
 const getrecipes = async (req, res) => {
     const recipes = formatrecipe(store[0])
     const diets = mapdiets(recipes)
-    console.log(req.query)
     try {
         const filterecipe = filters(recipes, req.query.filtros)
         const len = filterecipe.length
-        if (req.query.page) {
-            const { page } = req.query
-            const recipepage = paginado(page, filterecipe)
-            res.status(200).json({ recipepage, diets, len })
-        }
-        else {
-            res.status(200).json({ recipes, diets })
-
-        }
+        const { page } = req.query
+        const recipepage = paginado(page, filterecipe)
+        res.status(200).json({ recipepage, diets, len })
     } catch (error) {
         console.log(error.message)
 

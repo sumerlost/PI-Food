@@ -1,27 +1,21 @@
+let palabras = ["manzana", "banana", "naranja", "kiwi"];
 
-
-function A(a, b) {
-    this.a = a
-    this.b = b
-}
-
-const b = new A(1, 2)
-console.log(b)
-
-A.prototype.suma = function () {
-    return this.a + this.b
-}
-
-console.log(b.suma())
-
-const funcion = (value) => {
-    let activador
-    if (value.length === 1) {
-        activador = 0
+const asc = (a, b) => {
+    if (a < b) {
+        return 1;
+    } else if (a > b) {
+        return -1;
+    } else {
+        return 0;
     }
+}
 
-}
-var efe = []
-if (!efe.length) {
-    console.log("aca funca")
-}
+
+palabras.sort((a, b) =>
+    asc(a, b)
+
+);
+
+console.log(palabras); // ["banana", "kiwi", "manzana", "naranja"]
+const b = { b: "a" }
+console.log(b.hasOwnProperty("b"))

@@ -8,6 +8,7 @@ const formatrecipe = require("../Helpers/formatrecipe");
 const paginado = require("../Helpers/paginado");
 const mapdiets = require("../Helpers/mapdiets")
 const filters = require("../Helpers/filters")
+const orders = require("../Helpers/orders")
 
 const getrecipes = async (req, res) => {
     const recipes = formatrecipe(store[0])
@@ -15,8 +16,9 @@ const getrecipes = async (req, res) => {
     try {
         const filterecipe = filters(recipes, req.query.filtros)
         const len = filterecipe.length
+        const orderpage = orders(filterecipe, req.query.order, req.query.ord)
         const { page } = req.query
-        const recipepage = paginado(page, filterecipe)
+        const recipepage = paginado(page, orderpage)
         res.status(200).json({ recipepage, diets, len })
     } catch (error) {
         console.log(error.message)

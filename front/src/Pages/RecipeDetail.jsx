@@ -14,8 +14,7 @@ export const RecipeDetail = () => {
         dispatch(getRecipeId(id))
     }, [])
 
-    const recipeid = useSelector(state => state.recipeid)
-    console.log(recipeid)
+    const recipe = useSelector(state => state.recipes)
     return (
         <div className={styles.Esqueleto}>
 
@@ -23,12 +22,12 @@ export const RecipeDetail = () => {
             <div className={styles.LadoImg}>
                 <div className={styles.BorderImg}></div>
                 <div className={styles.ImgDiv}>
-                    <img className={styles.Img} src={recipeid.imagen} alt="" />
+                    <img className={styles.Img} src={recipe.imagen} alt="" />
                 </div>
             </div>
 
             <div className={styles.LadoInfo}>
-                <InfoDetail name={recipeid} />
+                <InfoDetail recipe={recipe} />
             </div>
             <div className={styles.MarginDer}></div>
 

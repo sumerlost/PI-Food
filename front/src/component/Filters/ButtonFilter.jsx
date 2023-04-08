@@ -5,6 +5,7 @@ import { getfilters } from "../../Redux/actions/getfilters";
 import { HandlerDiets } from "../../Handlers/Handlerdiets";
 import { GET_ALL_RECIPES, GET_RECIPE_NAME } from "../../Redux/actions/types";
 import { getRecipeName } from "../../Redux/actions/getrecipename";
+import { getOrders } from "../../Redux/actions/getorders"
 
 export const Filter = () => {
 
@@ -13,6 +14,7 @@ export const Filter = () => {
     const Diets = useSelector(state => state.diets)
     const filtros = HandlerDiets(Diets)
     const [toggleDiets, setToggleDiets] = useState(filtros)
+    const [typeorden, setTypeOrden] = useState("none")
     const search = useSelector(state => state.search)
 
 
@@ -41,6 +43,10 @@ export const Filter = () => {
         else if (type === GET_RECIPE_NAME) dispatch(getRecipeName(search, 1))
     }, [toggleDiets])
 
+    const hanlderorder = ({ value }) => {
+        dispatch(getOrders(typeorden, value))
+        dispatch(getAllRecipes(1))
+    }
 
     if (Diets) {
         return (
@@ -48,6 +54,16 @@ export const Filter = () => {
                 {Diets.map((element) => {
                     return <button onClick={() => handlertoggle(element)}>{element}</button>
                 })}
+                <select name="typeorden" id="typeorden" defaultValue="none" onChange={(event) => setTypeOrden(event.target.value)}>
+                    <option value="hs">Health Score</option>
+                    <option value="name">Alphabetic</option>
+                    <option value="none">None</option>
+                </select>
+                <select name="orden" id="orden" defaultValue="none" onChange={(event) => { hanlderorder(event.target) }}>
+                    <option value="asc">Ascendant</option>
+                    <option value="des">Descendant</option>
+                    <option value="none">None</option>
+                </select>
             </div>
         )
     }

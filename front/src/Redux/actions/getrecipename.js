@@ -10,13 +10,20 @@ export const getRecipeName = (string, page) => {
             if (filters.length === 0) {
                 filters.push("none")
             }
+            const storeorder = store.getState().order
+            let order = ""
+            if (!storeorder.hasOwnProperty("order")) {
+                order = "&order=none"
+            }
+            else {
+                order = "&order=" + storeorder.order + "&ord=" + storeorder.ord
+            }
             let aux = ""
             for (let e of filters) {
                 aux += "&filtros=" + e
             }
 
-            const response = await axios.get(recipename(string, page, aux))
-            console.log(response)
+            const response = await axios.get(recipename(string, page, aux, order))
             dispatch({ type: GET_RECIPE_NAME, payload: response.data })
         } catch (error) {
             console.log(error.message)

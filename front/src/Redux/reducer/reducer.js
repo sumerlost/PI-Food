@@ -1,4 +1,4 @@
-import { GET_ALL_RECIPES, GET_FILTERS, GET_RECIPE_NAME } from "../actions/types"
+import { GET_ALL_RECIPES, GET_FILTERS, GET_RECIPE_NAME, GET_SEARCH } from "../actions/types"
 import { GET_RECIPE_ID } from "../actions/types"
 
 const initialState = {
@@ -6,7 +6,8 @@ const initialState = {
     diets: [],
     len: 0,
     filters: [],
-    type: ""
+    type: "",
+    search: ""
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -39,6 +40,12 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 filters: action.payload
+            }
+
+        case GET_SEARCH:
+            return {
+                ...state,
+                search: action.payload
             }
 
         default:

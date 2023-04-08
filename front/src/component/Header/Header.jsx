@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { Sidebar } from "../SideBar/Sidebar";
 import { Filter } from "../Filters/ButtonFilter";
 import { getAllRecipes } from "../../Redux/actions/getallrecipes";
+import { getSearch } from "../../Redux/actions/getsearch"
 
 export default function Header() {
     const Diets = useSelector(state => state.diets)
@@ -17,6 +18,7 @@ export default function Header() {
             dispatch(getAllRecipes(1))
         }
         else if (value.length > 0) {
+            dispatch(getSearch(value))
             dispatch(getRecipeName(value, 1))
         }
 

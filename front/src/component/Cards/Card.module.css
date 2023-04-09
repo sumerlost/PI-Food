@@ -1,48 +1,110 @@
 .Esqueleto {
     box-sizing: border-box;
     width: 100%;
-    height: 100%;
+    /* Establece el ancho del elemento en un 100% del ancho del contenedor */
+    padding: 10px;
+    /* Agrega un espacio de 10px alrededor del contenido del elemento */
+    box-sizing: border-box;
+    /* Incluye el espacio de relleno y el borde dentro del ancho y la altura total del elemento */
+    display: inline-block;
+    /* Muestra el elemento como un bloque en línea */
+    vertical-align: top;
+    /* Establece la alineación vertical superior para el elemento */
 }
 
-.Img {
-    box-sizing: border-box;
-    width: 50%;
-    height: 100%;
-    display: flex;
-}
 
 .Top {
     box-sizing: border-box;
-    height: 75%;
-    display: flex;
-    flex-direction: row;
+    position: relative;
+    /* Establece la posición del elemento como relativa con respecto a su posición normal en el flujo del documento */
 }
 
-.Bot {
+
+.Img {
     box-sizing: border-box;
-    height: 25%;
+    width: 100%;
+    /* Establece el ancho del elemento en un 100% del ancho del contenedor */
+    height: 200px;
+    /* Establece la altura del elemento en 200 píxeles */
+    object-fit: cover;
+    /* Escala la imagen para que se ajuste a la altura y la anchura del elemento, recortando cualquier parte de la imagen que no quepa */
+}
+
+
+.Diets {
+    box-sizing: border-box;
+    position: absolute;
+    /* Establece la posición del elemento como absoluta, con respecto al primer elemento con posición relativa en su cadena de ancestros */
+    bottom: 0;
+    /* Establece la posición inferior del elemento en 0px desde el borde inferior del elemento primario */
+    left: 0;
+    /* Establece la posición izquierda del elemento en 0px desde el borde izquierdo del elemento primario */
+    right: 0;
+    /* Establece la posición derecha del elemento en 0px desde el borde derecho del elemento primario */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Establece el color de fondo del elemento en un tono de negro semitransparente */
+    padding: 10px;
+    /* Agrega un espacio de 10px alrededor del contenido del elemento */
 }
 
 .DietSub {
     box-sizing: border-box;
-    margin: 0%;
+    margin: 0;
+    /* Establece el margen del elemento en 0 */
+    font-size: 0.8rem;
+    /* Establece el tamaño de fuente del elemento en 0.8 rem (unidades relativas al tamaño de fuente del elemento primario) */
+    color: #fff;
+    /* Establece el color del texto en blanco */
 }
 
-.Diets {
-    box-sizing: border-box;
-    width: 50%;
-    height: 100%;
-    margin: 0vh;
-}
-
-.Ul {
-    box-sizing: border-box;
-    padding: 0%;
-    margin: 5px;
-}
 
 .List {
     box-sizing: border-box;
-    height: 100%;
-    display: contents;
+    margin: 5px 0 0 0;
+    /* Establece el margen superior del elemento en 5px y el resto de los márgenes en 0 */
+    padding: 0;
+    /* Establece el relleno del elemento en 0 */
+    display: flex;
+    /* Establece el modo de visualización del elemento como flexible */
+    flex-wrap: wrap;
+    /* Establece el modo de ajuste de línea del elemento como ajustar contenido */
+}
+
+
+.Ul {
+    box-sizing: border-box;
+    /* Establece el margen superior e inferior de la lista a 0 y el margen derecho a 5px */
+    margin: 0;
+    margin-right: 5px;
+    /* Establece el relleno superior e inferior en 2px y el relleno izquierdo y derecho en 5px */
+    padding: 2px 5px;
+    /* Establece el color de fondo de la lista a blanco */
+    background-color: #fff;
+    /* Establece el tamaño de fuente en 0.7rem (aproximadamente 11px) y el color de texto a negro (#333) */
+    font-size: 0.7rem;
+    color: #333;
+    /* Establece el radio de borde a 3px y agrega una sombra al borde */
+    border-radius: 3px;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.Bot {
+    box-sizing: border-box;
+    /* Establece el relleno superior e inferior en 10px y el relleno izquierdo y derecho en 0px */
+
+    /* Establece el color de fondo del contenedor a blanco */
+    background-color: #17171d46;
+    /* Establece el radio de borde inferior izquierdo y derecho a 3px */
+    border-radius: 0 0 3px 3px;
+    /* Establece el alineamiento del texto al centro */
+    text-align: center;
+    /* Establece el tamaño de fuente en 0.9rem (aproximadamente 14px) y el color de texto a negro (#333) */
+    font-size: 18px;
+    color: #080505;
+    /* Establece la altura del contenedor en 100px y agrega un desbordamiento oculto y una elipsis para evitar que el contenido exceda el contenedor */
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Agrega una sombra al borde */
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }

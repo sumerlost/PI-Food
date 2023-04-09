@@ -23,7 +23,7 @@ export const Recipes = () => {
         <div className={styles.Background}>
             <div className={styles.Header}> <Header /></div>
             <div className={styles.Pages}> <Cards recipes={recipes} /></div>
-            <NavBar handler={HandleNav} len={len} type={type} />
+            <div className={styles.NavBar}><NavBar handler={HandleNav} len={len} type={type} /></div>
         </div>
     )
 }

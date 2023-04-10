@@ -1,6 +1,6 @@
 const { DataTypes } = require("sequelize")
 
-const Diet = (sequelize) => {
+const DietModel = (sequelize) => {
     sequelize.define("Diet", {
         id: {
             type: DataTypes.INTEGER,
@@ -10,6 +10,7 @@ const Diet = (sequelize) => {
         name: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         }
     },
         {
@@ -17,4 +18,4 @@ const Diet = (sequelize) => {
         })
 }
 
-module.exports = Diet
+module.exports = DietModel

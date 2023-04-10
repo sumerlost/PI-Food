@@ -3,6 +3,7 @@ require('dotenv').config({ path: 'E:/curso Henry/PI-Food/back/api/.env' });
 const { API_KEY } = process.env
 const { endpointPreload } = require("../routes/endpoints")
 const formatrecipe = require("../Helpers/formatrecipe")
+const mapdiets = require("../Helpers/mapdiets")
 const fs = require('fs');
 const path = require('path');
 const store = []
@@ -23,17 +24,13 @@ const loadserver = () => {
     // }
 
     try {
-        // Carga el archivo JSON local
         const recipesData = fs.readFileSync(path.resolve(__dirname, 'recipes.json'), 'utf8');
-
-        // Convierte los datos del archivo JSON a un objeto JavaScript
         const recipes = JSON.parse(recipesData);
-
-        // Aquí puedes hacer cualquier formateo necesario de los datos.
-        // Agrega los datos formateados a la matriz `store`
+        const recipe = formatrecipe(recipes.results)
+        const diets = mapdiets(recipe)
         store.push(recipes.results);
-
         console.log("server cargado");
+        return diets
     } catch (error) {
         console.log(error.message);
     }

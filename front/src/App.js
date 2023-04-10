@@ -6,6 +6,7 @@ import { Recipes } from "./Pages/Recipes";
 import { HOME, RECIPES } from "./Routes/Routes"
 import { RecipeDetail } from "./Pages/RecipeDetail";
 import { Search } from "./Pages/Search";
+import CreateRecipe from "./Pages/CreateRecipe";
 
 function App() {
   return (
@@ -13,8 +14,9 @@ function App() {
       <Routes>
         <Route path={HOME} element={<Inicio />} />
         <Route path={RECIPES} element={<Recipes />} />
-        <Route path="/prueba/:id" element={<RecipeDetail />} />
-        <Route path="/search" element={<Search />} />
+        <Route path="/recipes/:id" element={<RecipeDetail />} />
+
+        <Route path="/recipes/create" element={<CreateRecipe />} />
       </Routes>
     </div>
   );

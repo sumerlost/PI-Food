@@ -1,23 +1,16 @@
 const { DataTypes } = require("sequelize");
 
-const Recipe = (sequelize) => {
+const RecipeModel = (sequelize) => {
     sequelize.define("Recipe", {
         id: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.UUID,
+            defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
-            autoIncrement: true,
-        },
-        code: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
 
         },
         title: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-
         },
         imagen: {
             type: DataTypes.STRING,
@@ -41,4 +34,4 @@ const Recipe = (sequelize) => {
     })
 }
 
-module.exports = Recipe;
+module.exports = RecipeModel;

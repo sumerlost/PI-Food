@@ -8,17 +8,20 @@ const diets = require("./routes/getRoutes/routediets")
 const { sequelize } = require("../db/db")
 const { loadserver } = require("./Controllers/loadserver")
 const cors = require("cors")
+const dietmap = require("../db/controllers/dietmap")
+const create = require("./routes/postRoutes/routecreaterecipe")
 
-
-loadserver()
+const dietsdb = loadserver()
 server.use(cors())
 server.use(express.json())
 server.use(recipes)
 server.use(recipename)
 server.use(recipeid)
 server.use(diets)
+server.use(create)
 
 
 server.listen(PORT, async () => {
     await sequelize.sync({ force: true })
+    dietmap(dietsdb)
 })

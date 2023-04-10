@@ -7,7 +7,6 @@ const getrecipeName = (recipes, req, res) => {
     try {
         const aux = recipes.filter(i => i.title.toUpperCase().includes(req.query.name.toUpperCase()))
         const myrecipe = formatrecipe(aux)
-        console.log(myrecipe)
         const diets = mapdiets(myrecipe)
         const filterecipe = filters(myrecipe, req.query.filtros)
         const len = filterecipe.length

@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import styles from "./RecipeDetail.module.css"
-import { InfoDetail } from "../component/InfoDetail/InfoDetail";
 import { useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getRecipeId } from "../Redux/actions/getrecipeid"

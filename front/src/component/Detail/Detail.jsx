@@ -18,7 +18,7 @@ export const Detail = ({ recipe }) => {
                         <h4 className={styles.Info2}>HealthSkill: {recipe.healthskil}%</h4>
                     </div>
                     <div className={styles.InfoDetail3}>
-                        {recipe.diets ? <h4 className={styles.Diets}>Diets: {recipe.diets}</h4> : ""}
+                        {recipe.diets ? <h4 className={styles.Diets}>Diets: {recipe.diets.join(", ")}</h4> : ""}
                     </div>
                     <div className={styles.Steps}>
                         <h3 className={styles.StepTitle}>Steps</h3>

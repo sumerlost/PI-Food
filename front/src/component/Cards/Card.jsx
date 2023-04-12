@@ -7,7 +7,7 @@ export const Card = ({ recipe }) => {
 
     if (recipe) {
 
-        const diets = recipe.diets.map((element) => { return (<ul className={styles.Ul}>{element}</ul>) })
+        const diets = recipe.diets.map((element, index) => { return (<ul key={index} className={styles.Ul}>{element}</ul>) })
 
         return (
             <div className={styles.Esqueleto}>

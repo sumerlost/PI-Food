@@ -6,6 +6,7 @@ import { HandlerDiets } from "../../Handlers/Handlerdiets";
 import { GET_ALL_RECIPES, GET_RECIPE_NAME } from "../../Redux/actions/types";
 import { getRecipeName } from "../../Redux/actions/getrecipename";
 import { getOrders } from "../../Redux/actions/getorders"
+import styles from "./ButtonFilter.module.css"
 
 export const Filter = () => {
 
@@ -50,10 +51,13 @@ export const Filter = () => {
 
     if (Diets) {
         return (
-            <div>
-                {Diets.map((element) => {
-                    return <button onClick={() => handlertoggle(element)}>{element}</button>
-                })}
+            <div className={styles.Esqueleto}>
+                <div className={styles.ButtonFilter}>
+
+                    {Diets.map((element, index) => {
+                        return <button key={index} onClick={() => handlertoggle(element)}>{element}</button>
+                    })}
+                </div>
                 <select name="typeorden" id="typeorden" defaultValue="none" onChange={(event) => setTypeOrden(event.target.value)}>
                     <option value="hs">Health Score</option>
                     <option value="name">Alphabetic</option>

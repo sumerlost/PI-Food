@@ -2,8 +2,6 @@ import React from "react";
 import styles from "./Header.module.css"
 import { getRecipeName } from "../../Redux/actions/getrecipename"
 import { useDispatch, useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom";
-import { Sidebar } from "../SideBar/Sidebar";
 import { Filter } from "../Filters/ButtonFilter";
 import { getAllRecipes } from "../../Redux/actions/getallrecipes";
 import { getSearch } from "../../Redux/actions/getsearch"
@@ -28,8 +26,8 @@ export default function Header() {
         <div className={styles.Main}>
             <div className={styles.SizeBar}>
                 <input className={styles.SearchBar} onChange={(event) => { HanlderSearch(event.target) }}></input>
-                {Diets.length !== 0 ? <div><Filter /></div> : console.log("funca")}
             </div>
+            {Diets.length !== 0 ? <div className={styles.Filter}><Filter /></div> : console.log("funca")}
         </div>
     )
 }

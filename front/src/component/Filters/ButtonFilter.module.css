@@ -1,0 +1,15 @@
+.Esqueleto {
+    width: 100%;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ButtonFilter {
+
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

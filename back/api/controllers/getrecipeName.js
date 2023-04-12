@@ -2,6 +2,7 @@ const formatrecipe = require("../Helpers/formatrecipe")
 const mapdiets = require("../Helpers/mapdiets")
 const filters = require("../Helpers/filters")
 const paginado = require("../Helpers/paginado")
+const orders = require("../Helpers/orders")
 
 const getrecipeName = (recipes, req, res) => {
     try {
@@ -10,8 +11,9 @@ const getrecipeName = (recipes, req, res) => {
         const diets = mapdiets(myrecipe)
         const filterecipe = filters(myrecipe, req.query.filtros)
         const len = filterecipe.length
+        const orderpage = orders(filterecipe, req.query.order, req.query.ord)
         const { page } = req.query
-        const recipepage = paginado(page, filterecipe)
+        const recipepage = paginado(page, orderpage)
         res.status(200).json({ recipepage, diets, len })
     }
     catch (error) {

@@ -3,8 +3,6 @@ import styles from "./Cards.module.css"
 import { Card } from "../Cards/Card"
 
 export const Cards = ({ recipes }) => {
-
-
     return (
         <div>
             <div className={styles.Cards}>
@@ -25,4 +23,5 @@ export const Cards = ({ recipes }) => {
 
         </div>
     )
+
 }

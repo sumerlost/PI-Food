@@ -1,13 +1,35 @@
-.Inicio {
-    box-sizing: border-box;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.Background {
+
     width: 100%;
-    height: 100vh;
-    Background-image: url('../../public/Meat-kebab-food-plate_1920x1080.jpg');
+    height: 100%;
+    Background-image: url('./imagenes/portada.jpg');
     Background-size: cover;
-    Background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    position: fixed;
+
+}
+
+.Main {
+    box-sizing: border-box;
+    padding: 80px;
+    width: 50%;
+    float: right;
+    height: 100%;
+
+}
+
+.TitlePosition {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30%;
+    text-align: center;
+}
+
+.Title {
+    box-sizing: border-box;
+    font-family: cursive;
+    font-style: italic;
+    font-size: 3rem;
 
 }

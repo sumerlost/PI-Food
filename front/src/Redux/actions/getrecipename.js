@@ -7,6 +7,7 @@ export const getRecipeName = (string, page) => {
     return async function (dispatch) {
         try {
             const filters = store.getState().filters
+
             if (filters.length === 0) {
                 filters.push("none")
             }

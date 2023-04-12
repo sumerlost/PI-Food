@@ -73,19 +73,21 @@
 }
 
 .Name {
-    width: 20%;
+    box-sizing: border-box;
+    width: 25%;
     margin: 0px;
-    padding: 5px;
+    padding: 5px 0 5px 0px;
     font-size: 1.3rem;
     text-align: end;
 }
 
 .Title {
+    box-sizing: border-box;
     margin: 0px;
     padding: 5px;
     font-size: 1.3rem;
     text-align: center;
-    width: 80%;
+    width: 75%;
 }
 
 .Info2 {
@@ -94,7 +96,6 @@
     padding: 5px;
     font-size: 1.2rem;
     text-align: center;
-    display: flex;
 
 }
 

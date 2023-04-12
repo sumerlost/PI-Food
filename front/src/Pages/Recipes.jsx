@@ -22,7 +22,7 @@ export const Recipes = () => {
     return (
         <div className={styles.Background}>
             <div className={styles.Header}> <Header /></div>
-            <div className={styles.Pages}> <Cards recipes={recipes} /></div>
+            <div className={styles.Pages}>  {recipes.length !== 0 ? <Cards recipes={recipes} /> : ""} </div>
             <div className={styles.NavBar}><NavBar handler={HandleNav} len={len} type={type} /></div>
         </div>
     )

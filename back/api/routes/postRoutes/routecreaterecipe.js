@@ -4,7 +4,7 @@ const { Recipe, Diet } = require("../../../db/db");
 router.post("/recipes/create", async (req, res) => {
 
     const { recipe } = req.body;
-    console.log(recipe)
+
     try {
         const newRecipe = await Recipe.create(recipe);
         if (recipe.diets && recipe.diets.length) {
@@ -13,7 +13,6 @@ router.post("/recipes/create", async (req, res) => {
                     name: recipe.diets
                 }
             });
-            console.log(diets)
             const dietIds = diets.map(diet => diet.id);
             await newRecipe.setDiets(dietIds);
         }

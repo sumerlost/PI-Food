@@ -2,6 +2,7 @@
     box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-around;
     opacity: 95%;
     width: 100%;
     height: 100%;
@@ -14,19 +15,27 @@
     display: flex;
     text-align: center;
     flex-direction: row;
-    justify-content: end;
     padding: 20px;
-    width: 62%;
+    width: 30%;
 
 }
 
 .Filter {
-    width: 38%;
+    width: 25%;
     height: 100%;
 }
 
 .SearchBar {
-    width: 400px;
+    width: 80%;
     height: 30px;
     border-radius: 1vh;
+}
+
+.CreateRecipe {
+    box-sizing: border-box;
+    padding: 20px;
+
+    text-align: center;
+    width: 20%;
+    height: 100%;
 }

@@ -22,6 +22,6 @@ server.use(create)
 
 
 server.listen(PORT, async () => {
-    await sequelize.sync({ force: true })
+    await sequelize.sync({ force: false })
     dietmap(dietsdb)
 })

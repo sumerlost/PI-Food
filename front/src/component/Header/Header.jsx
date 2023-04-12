@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux"
 import { Filter } from "../Filters/ButtonFilter";
 import { getAllRecipes } from "../../Redux/actions/getallrecipes";
 import { getSearch } from "../../Redux/actions/getsearch"
+import { Link } from "react-router-dom"
+import { CREATE } from "../../Routes/Routes";
 
 export default function Header() {
     const Diets = useSelector(state => state.diets)
@@ -24,10 +26,11 @@ export default function Header() {
 
     return (
         <div className={styles.Main}>
+            {Diets.length !== 0 ? <div className={styles.Filter}><Filter /></div> : console.log("funca")}
             <div className={styles.SizeBar}>
                 <input className={styles.SearchBar} onChange={(event) => { HanlderSearch(event.target) }}></input>
             </div>
-            {Diets.length !== 0 ? <div className={styles.Filter}><Filter /></div> : console.log("funca")}
+            <div className={styles.CreateRecipe}>   <Link to={CREATE}><button>Create Recipe</button></Link></div>
         </div>
     )
 }

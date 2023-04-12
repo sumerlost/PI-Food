@@ -1,8 +1,8 @@
 const formatrecipe = require("../Helpers/formatrecipe")
 const mapdiets = require("../Helpers/mapdiets")
-const filters = require("../Helpers/filters")
+const filters = require("../Handlers/filters")
 const paginado = require("../Helpers/paginado")
-const orders = require("../Helpers/orders")
+const orders = require("../Handlers/orders")
 
 const getrecipeName = (recipes, req, res) => {
     try {

@@ -1,4 +1,4 @@
-import { GET_ALL_RECIPES, GET_FILTERS, GET_ORDERS, GET_RECIPE_NAME, GET_SEARCH, POST_RECIPE } from "../actions/types"
+import { ERROR, GET_ALL_RECIPES, GET_FILTERS, GET_ORDERS, GET_RECIPE_NAME, GET_SEARCH, POST_RECIPE } from "../actions/types"
 import { GET_RECIPE_ID } from "../actions/types"
 
 const initialState = {
@@ -9,7 +9,8 @@ const initialState = {
     type: "",
     search: "",
     order: {},
-    post: ""
+    post: "",
+    myerror: ""
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -59,7 +60,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 post: action.payload
             }
-
+        case ERROR:
+            return {
+                ...state,
+                myerror: action.payload
+            }
         default:
             return { ...state }
     }

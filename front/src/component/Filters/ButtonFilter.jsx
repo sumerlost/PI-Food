@@ -7,6 +7,7 @@ import { GET_ALL_RECIPES, GET_RECIPE_NAME } from "../../Redux/actions/types";
 import { getRecipeName } from "../../Redux/actions/getrecipename";
 import { getOrders } from "../../Redux/actions/getorders"
 import styles from "./ButtonFilter.module.css"
+import { HandlerToggle } from "../../Handlers/HandlerToggle";
 
 export const Filter = () => {
 
@@ -19,14 +20,7 @@ export const Filter = () => {
     const search = useSelector(state => state.search)
 
 
-    const handlertoggle = (key) => {
-        for (let element in toggleDiets) {
-            if (key === element) {
-                setToggleDiets({ ...toggleDiets, [element]: !toggleDiets[element] })
 
-            }
-        }
-    }
 
     useEffect(() => {
         const filtro = []
@@ -46,7 +40,8 @@ export const Filter = () => {
 
     const hanlderorder = ({ value }) => {
         dispatch(getOrders(typeorden, value))
-        dispatch(getAllRecipes(1))
+        if (type === GET_ALL_RECIPES) dispatch(getAllRecipes(1))
+        else if (type === GET_RECIPE_NAME) dispatch(getRecipeName(search, 1))
     }
 
     if (Diets) {
@@ -55,7 +50,7 @@ export const Filter = () => {
                 <div className={styles.ButtonFilter}>
 
                     {Diets.map((element, index) => {
-                        return <button key={index} onClick={() => handlertoggle(element)}>{element}</button>
+                        return <button className={toggleDiets[element] && styles.On} key={index} onClick={() => HandlerToggle(element, toggleDiets, setToggleDiets)}>{element}</button>
                     })}
                 </div>
                 <select name="typeorden" id="typeorden" defaultValue="none" onChange={(event) => setTypeOrden(event.target.value)}>

@@ -7,11 +7,16 @@ const { store } = require("./loadserver")
 const formatrecipe = require("../Helpers/formatrecipe");
 const paginado = require("../Helpers/paginado");
 const mapdiets = require("../Helpers/mapdiets")
-const filters = require("../Helpers/filters")
-const orders = require("../Helpers/orders")
+const filters = require("../Handlers/filters")
+const orders = require("../Handlers/orders")
+const { Recipe, Diet } = require("../../db/db");
+const formatrecipedb = require("../Helpers/formatrecipedb");
 
 const getrecipes = async (req, res) => {
-    const recipes = formatrecipe(store[0])
+    const aux1 = formatrecipe(store[0])
+    const dbrecipes = await Recipe.findAll({ include: Diet })
+    const aux2 = formatrecipedb(dbrecipes)
+    const recipes = [...aux1, ...aux2]
     const diets = mapdiets(recipes)
     try {
         const filterecipe = filters(recipes, req.query.filtros)

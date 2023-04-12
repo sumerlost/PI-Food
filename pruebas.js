@@ -1,21 +1,5 @@
-let palabras = ["manzana", "banana", "naranja", "kiwi"];
+let palabras = { a: "a" }
+let val = [palabras]
 
-const asc = (a, b) => {
-    if (a < b) {
-        return 1;
-    } else if (a > b) {
-        return -1;
-    } else {
-        return 0;
-    }
-}
+console.log(val)
 
-
-palabras.sort((a, b) =>
-    asc(a, b)
-
-);
-
-console.log(palabras); // ["banana", "kiwi", "manzana", "naranja"]
-const b = { b: "a" }
-console.log(b.hasOwnProperty("b"))

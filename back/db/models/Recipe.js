@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 const RecipeModel = (sequelize) => {
     sequelize.define("Recipe", {
-        id: {
+        code: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
@@ -11,6 +11,7 @@ const RecipeModel = (sequelize) => {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
+            unique: true
         },
         imagen: {
             type: DataTypes.STRING,

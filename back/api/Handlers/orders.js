@@ -23,8 +23,6 @@ const desalf = (a, b) => {
     }
 }
 const orders = (recipes, query, ord) => {
-    console.log(query)
-
     if (query === "none" || undefined) {
         return recipes
     }

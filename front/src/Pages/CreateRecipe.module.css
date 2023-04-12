@@ -1,18 +1,50 @@
-.Input {
-    border: none;
+.Background {
+    box-sizing: border-box;
     width: 100%;
-    height: 90%;
-    padding: 3px 0;
-    font-size: 1rem;
-    text-align: center;
+    height: 100%;
+    Background-image: url('./imagenes/portada.jpg');
+    Background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: absolute;
+}
+
+.Main {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 100px 200px 0;
+}
+
+.Form {
+    box-sizing: border-box;
+    width: 50%;
+    height: 80%;
+    float: right;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+}
+
+.Label {
+    box-sizing: border-box;
+    padding: 20px;
+    width: 100%;
+    height: 10%;
+    position: relative;
+    font-size: 1.5rem;
 
 }
 
-.Diets {
-    border: none;
-    width: 100%;
-    height: 90%;
-    padding: 3px 0;
-    font-size: 1rem;
-    text-align: center;
+.Button {
+    width: 20%;
+
+}
+
+.ButtonPosition {
+    box-sizing: border-box;
+    width: 90%;
+
+    text-align: end;
 }
